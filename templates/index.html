@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Query Generator</title>
+</head>
+<body>
+    <h1>SQL Query Generator</h1>
+    <form action="/submit" method="post">
+        <label for="question">Enter your question:</label>
+        <input type="text" id="question" name="question" required>
+        <button type="submit">Generate SQL Query</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if question %}
+        <h2>Question:</h2>
+        <p>{{ question }}</p>
+        <h2>Generated SQL Query:</h2>
+        <p>{{ sql_query }}</p>
+    {% endif %}
+</body>
+</html>
